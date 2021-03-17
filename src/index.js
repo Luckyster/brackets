@@ -1,6 +1,6 @@
 function inStr(str, bracketsConfig) {
     let strOut = str;
-    for (let bracketTemplate of bracketsConfig) {
+    for (const bracketTemplate of bracketsConfig) {
         let pos = strOut.indexOf(bracketTemplate[0] + bracketTemplate[1]);
 
         if (pos !== -1) {
@@ -11,10 +11,4 @@ function inStr(str, bracketsConfig) {
     return strOut;
 }
 
-module.exports = function check(str, bracketsConfig) {
-    if (inStr(str, bracketsConfig) === '') {
-        return true;
-    } else {
-        return false;
-    }
-}
+module.exports = (str, bracketsConfig) => inStr(str, bracketsConfig) === '';
